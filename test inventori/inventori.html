@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventori Sederhana</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Inventori App</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Inventori</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1>Manajemen Inventori</h1>
+
+        <!-- Form Tambah Item -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Tambah Item</h5>
+                <div class="form-group">
+                    <input type="text" id="itemName" class="form-control" placeholder="Nama Item" required>
+                    <input type="number" id="itemQuantity" class="form-control mt-2" placeholder="Jumlah" required min="1">
+                    <button onclick="tambahItem()" class="btn btn-primary mt-2">Tambah Item</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Hapus Item -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Hapus Item</h5>
+                <div class="form-group">
+                    <!-- Dropdown untuk memilih item yang ingin dihapus -->
+                    <select id="removeItemName" class="form-control"></select>
+                    <input type="number" id="removeItemQuantity" class="form-control mt-2" placeholder="Jumlah untuk Dihapus" required min="1">
+                    <button onclick="hapusItem()" class="btn btn-danger mt-2">Hapus Item</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daftar Inventari -->
+        <h2>Inventari:</h2>
+        <ul id="inventoryList" class="list-group"></ul>
+
+        <!-- Tombol untuk mengunduh data -->
+        <button onclick="unduhData()" class="btn btn-success mt-3">Unduh Data Inventari</button>
+
+    </div>
+
+    <!-- Memanggil script.js -->
+    <script src="script.js"></script>
+
+</body>
+</html>
